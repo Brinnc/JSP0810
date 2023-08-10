@@ -1,0 +1,30 @@
+0810메모장
+<java>
+sql문
+
+접속: mysql -h localhost -u root -p
+
+show databases;
+
+create database javaee;
+
+use javaee;
+
+create table member(
+	member_idx int primary key auto_increment
+	, id varchar(20)
+	, pass varchar(64)
+ 	, name varchar(20)
+ 	) default character set utf8;
+
+
+insert into member(id, pass, name) values('choisa', '1234', '승아');
+
+create table board(
+	board_idx int primary key auto_increment
+	, title varchar(100)
+ 	, writer varchar(20)
+   	, regdate timestamp default now()
+    	, hit int default 0
+   	, content text
+   	) default character set utf8;
